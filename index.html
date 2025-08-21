@@ -11,11 +11,16 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
             color: #e2e8f0;
-            overflow-x: hidden;
         }
         .glass-effect {
             background: rgba(17, 24, 39, 0.5);
@@ -84,7 +89,8 @@
         </div>
     </header>
 
-    <main class="hero-bg">
+    <main class="relative w-full h-screen">
+        <div class="hero-bg absolute inset-0"></div>
         <div class="absolute inset-0 bg-black/70"></div>
         <div class="relative container mx-auto px-6 h-screen flex flex-col justify-center items-center text-center">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
