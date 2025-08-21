@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWeb - Personal Portfolio Experts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-bg {
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+        .section-glow {
+            position: relative;
+        }
+        .section-glow::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .card-hover-glow {
+            transition: all 0.3s ease;
+        }
+        .card-hover-glow:hover {
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.3), 0 0 10px rgba(99, 102, 241, 0.2);
+            transform: translateY(-5px);
+        }
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">My<span class="text-indigo-400">Web</span></a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="text-slate-300 hover:text-indigo-400 transition-colors">Services</a>
+                <a href="#portfolio" class="text-slate-300 hover:text-indigo-400 transition-colors">Showcase</a>
+                <a href="#process" class="text-slate-300 hover:text-indigo-400 transition-colors">Process</a>
+                <a href="#contact-info" class="text-slate-300 hover:text-indigo-400 transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/80 backdrop-blur-sm">
+            <a href="#services" class="block py-2 px-4 text-sm text-white hover:bg-indigo-500">Services</a>
+            <a href="#portfolio" class="block py-2 px-4 text-sm text-white hover:bg-indigo-500">Showcase</a>
+            <a href="#process" class="block py-2 px-4 text-sm text-white hover:bg-indigo-500">Process</a>
+            <a href="#contact-info" class="block py-2 px-4 text-sm text-white hover:bg-indigo-500">Contact</a>
+        </div>
+    </header>
+
+    <main class="hero-bg">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative container mx-auto px-6 h-screen flex flex-col justify-center items-center text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                Showcase Your Talent with a<br/> <span id="typed-element" class="text-indigo-400"></span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                From artists and developers to consultants and photographers, we create bespoke online portfolios that make you stand out and open doors to new opportunities.
+            </p>
+        </div>
+    </main>
+
+    <section id="services" class="py-20 md:py-32 section-glow">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 scroll-animation">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Services for Professionals</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">We provide everything you need to build a powerful and professional online presence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow scroll-animation">
+                    <div class="bg-indigo-500/10 text-indigo-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                        <i data-lucide="palette" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Custom Design</h3>
+                    <p class="text-slate-400">We create 100% unique portfolio designs that reflect your personal brand, style, and professional identity.</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow scroll-animation" style="transition-delay: 100ms;">
+                    <div class="bg-indigo-500/10 text-indigo-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                        <i data-lucide="file-text" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Interactive Resume</h3>
+                    <p class="text-slate-400">Transform your static CV into a dynamic, interactive online experience that grabs the attention of recruiters.</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow scroll-animation" style="transition-delay: 200ms;">
+                    <div class="bg-indigo-500/10 text-indigo-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                        <i data-lucide="star" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Personal Branding</h3>
+                    <p class="text-slate-400">We help you define your personal brand with custom logos, color schemes, and a compelling narrative.</p>
+                </div>
+                 <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow scroll-animation" style="transition-delay: 300ms;">
+                    <div class="bg-indigo-500/10 text-indigo-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                        <i data-lucide="pencil-line" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Content Strategy</h3>
+                    <p class="text-slate-400">We assist in developing a compelling content strategy to effectively communicate your expertise and value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 md:py-32 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 scroll-animation">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Portfolio Showcase</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">See how we've helped professionals like you create a stunning online presence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 4: Mechanical Engineer -->
+                <a href="https://myweb-eg.github.io/engineer-sample/" data-portfolio-id="mechanical-engineer" class="portfolio-card group relative block overflow-hidden rounded-lg scroll-animation cursor-pointer" style="transition-delay: 300ms;">
+                    <img src="person sample 2.png" alt="Mechanical Engineer Portfolio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-all duration-300"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Engineer's Blueprint</h3>
+                        <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">A detailed portfolio for a mechanical engineer, highlighting projects and technical skills.</p>
+                    </div>
+                    <div class="absolute top-4 right-4 text-white transform translate-x-16 group-hover:translate-x-0 transition-transform duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                        <i data-lucide="arrow-up-right" class="w-8 h-8"></i>
+                    </div>
+                </a>
+                <!-- Card 5: Pharmacist -->
+                <a href="https://myweb-eg.github.io/elegant-sample/" data-portfolio-id="pharmacist" class="portfolio-card group relative block overflow-hidden rounded-lg scroll-animation cursor-pointer" style="transition-delay: 400ms;">
+                    <img src="person sample.png" alt="Pharmacist Portfolio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-all duration-300"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Pharmacist's Dispense</h3>
+                        <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">A professional site for a pharmacist, showcasing expertise and patient care philosophy.</p>
+                    </div>
+                    <div class="absolute top-4 right-4 text-white transform translate-x-16 group-hover:translate-x-0 transition-transform duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                        <i data-lucide="arrow-up-right" class="w-8 h-8"></i>
+                    </div>
+                </a>
+                <!-- Card 6: HR Professional -->
+                <a href="https://myweb-eg.github.io/Luxury-sample/" data-portfolio-id="hr" class="portfolio-card group relative block overflow-hidden rounded-lg scroll-animation cursor-pointer" style="transition-delay: 500ms;">
+                    <img src="person sample 3.png" alt="HR Professional Portfolio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-all duration-300"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">HR Professional's Profile</h3>
+                        <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">A comprehensive portfolio for an HR professional, detailing experience and leadership.</p>
+                    </div>
+                    <div class="absolute top-4 right-4 text-white transform translate-x-16 group-hover:translate-x-0 transition-transform duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                        <i data-lucide="arrow-up-right" class="w-8 h-8"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-20 md:py-32 section-glow">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20 scroll-animation">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Our Creation Process</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">We follow a collaborative, four-step process to ensure your portfolio is a masterpiece that truly represents you.</p>
+            </div>
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-1/2 top-10 bottom-10 w-0.5 bg-gray-700 hidden md:block"></div>
+                <div class="relative mb-12 md:mb-24 scroll-animation">
+                    <div class="md:flex items-center md:justify-end">
+                        <div class="md:w-5/12"></div>
+                        <div class="md:w-1/12 flex justify-center"><div class="z-10 bg-indigo-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold ring-8 ring-gray-900">1</div></div>
+                        <div class="md:w-5/12"><div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow"><div class="flex items-center gap-4 mb-4"><i data-lucide="search" class="w-8 h-8 text-indigo-400"></i><h3 class="text-2xl font-bold text-white">Discovery</h3></div><p class="text-slate-400">We start by diving deep into your career goals, personal brand, and the audience you want to reach.</p></div></div>
+                    </div>
+                </div>
+                <div class="relative mb-12 md:mb-24 scroll-animation">
+                    <div class="md:flex items-center flex-row-reverse">
+                        <div class="md:w-5/12"></div>
+                        <div class="md:w-1/12 flex justify-center"><div class="z-10 bg-indigo-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold ring-8 ring-gray-900">2</div></div>
+                        <div class="md:w-5/12"><div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow"><div class="flex items-center gap-4 mb-4"><i data-lucide="layout-template" class="w-8 h-8 text-indigo-400"></i><h3 class="text-2xl font-bold text-white">Design</h3></div><p class="text-slate-400">Our designers create visually stunning mockups tailored to your style, focusing on a seamless user experience.</p></div></div>
+                    </div>
+                </div>
+                <div class="relative mb-12 md:mb-24 scroll-animation">
+                    <div class="md:flex items-center md:justify-end">
+                        <div class="md:w-5/12"></div>
+                        <div class="md:w-1/12 flex justify-center"><div class="z-10 bg-indigo-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold ring-8 ring-gray-900">3</div></div>
+                        <div class="md:w-5/12"><div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow"><div class="flex items-center gap-4 mb-4"><i data-lucide="code-2" class="w-8 h-8 text-indigo-400"></i><h3 class="text-2xl font-bold text-white">Development</h3></div><p class="text-slate-400">Using clean code, our developers bring the designs to life, ensuring your site is fast, responsive, and flawless.</p></div></div>
+                    </div>
+                </div>
+                <div class="relative scroll-animation">
+                    <div class="md:flex items-center flex-row-reverse">
+                        <div class="md:w-5/12"></div>
+                        <div class="md:w-1/12 flex justify-center"><div class="z-10 bg-indigo-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold ring-8 ring-gray-900">4</div></div>
+                        <div class="md:w-5/12"><div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow"><div class="flex items-center gap-4 mb-4"><i data-lucide="rocket" class="w-8 h-8 text-indigo-400"></i><h3 class="text-2xl font-bold text-white">Launch</h3></div><p class="text-slate-400">We deploy your new portfolio to the world and provide support to ensure it helps you achieve your goals.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-info" class="py-20 md:py-32 bg-gray-900/50 section-glow">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-center mb-16 scroll-animation">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Let's Connect!</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">We're eager to hear about your vision and help you create an impactful online presence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-3xl mx-auto">
+                <a href="https://www.instagram.com/myweb.eg/" target="_blank" class="group bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow flex flex-col items-center justify-center text-center scroll-animation">
+                    <div class="bg-indigo-500/10 text-indigo-400 rounded-full w-20 h-20 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                        <i data-lucide="instagram" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Instagram</h3>
+                    <p class="text-indigo-400 font-mono tracking-wider text-lg group-hover:text-white transition-colors duration-300">@myweb.eg</p>
+                </a>
+                <!-- LinkedIn button removed -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6 text-center text-slate-400">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/myweb.eg/" target="_blank" class="hover:text-indigo-400"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <!-- LinkedIn icon removed -->
+                <a href="#" class="hover:text-indigo-400"><i data-lucide="home" class="w-6 h-6"></i></a>
+            </div>
+            <p>&copy; 2025 MyWeb. All Rights Reserved.</p>
+            <p class="text-sm text-slate-500 mt-2">Helping Professionals Shine Online</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            // Sticky header
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('glass-effect', window.scrollY > 50);
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // Hero section typed text and background changer
+            const heroElement = document.querySelector('.hero-bg');
+            const bgImages = [
+                'background 1.jpeg', // Artist/Photographer
+                'background 5.png', // Developer
+                'background 6.png', // Designer
+                'background 7.png'  // Creative Showcase
+            ];
+
+            bgImages.forEach(src => { new Image().src = src; }); // Preload images
+            heroElement.style.backgroundImage = `url('${bgImages[0]}')`;
+
+            new Typed('#typed-element', {
+                strings: ['Stunning Portfolio.', 'Personal Website.', 'Digital CV.', 'Creative Showcase.'],
+                typeSpeed: 50,
+                backSpeed: 50,
+                backDelay: 2000,
+                loop: true,
+                smartBackspace: true,
+                preStringTyped: (arrayPos) => {
+                    heroElement.style.backgroundImage = `url('${bgImages[arrayPos]}')`;
+                },
+            });
+
+            // Scroll animations
+            const scrollElements = document.querySelectorAll('.scroll-animation');
+            const elementInView = (el) => el.getBoundingClientRect().top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9;
+            const handleScrollAnimation = () => {
+                scrollElements.forEach(el => {
+                    if (elementInView(el)) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', handleScrollAnimation);
+            handleScrollAnimation();
+
+            // --- Portfolio Card Link Logic ---
+            const portfolioData = {
+               
+                "mechanical-engineer": { websiteUrl: "https://myweb-eg.github.io/engineer-sample/" },
+                "pharmacist": { websiteUrl: "https://myweb-eg.github.io/elegant-sample/" },
+                "hr": { websiteUrl: "https://myweb-eg.github.io/Luxury-sample/" }
+            };
+
+            document.querySelectorAll('.portfolio-card').forEach(card => {
+                const portfolioId = card.dataset.portfolioId;
+                const data = portfolioData[portfolioId];
+
+                if (data && data.websiteUrl) {
+                    card.href = data.websiteUrl;
+                    card.target = '_blank'; // Open in a new tab
+                    card.rel = 'noopener noreferrer'; // Security best practice
+                }
+            });
+        });
+    </script>
+</body>
+</html>
