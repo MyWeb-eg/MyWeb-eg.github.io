@@ -15,7 +15,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
             color: #e2e8f0;
-            overflow-x: hidden; /* Fix for horizontal scrolling */
+            overflow-x: hidden;
         }
         .glass-effect {
             background: rgba(17, 24, 39, 0.5);
@@ -27,12 +27,6 @@
             background-size: cover;
             background-position: center;
             transition: background-image 1s ease-in-out;
-            background-attachment: fixed;
-        }
-        @media (max-width: 768px) {
-            .hero-bg {
-                background-attachment: scroll;
-            }
         }
         .section-glow {
             position: relative;
@@ -203,7 +197,7 @@
                 <div class="relative mb-12 md:mb-24 scroll-animation">
                     <div class="md:flex items-center flex-row-reverse">
                         <div class="md:w-5/12"></div>
-                        <div class="md:w-1/12 flex justify-center"><div class="z-10 bg-indigo-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold ring-8 ring-gray-900">2</div></div>
+                        <div class="md:w-1/2 flex justify-center"><div class="z-10 bg-indigo-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold ring-8 ring-gray-900">2</div></div>
                         <div class="md:w-5/12"><div class="bg-gray-900 p-8 rounded-xl border border-gray-800 card-hover-glow"><div class="flex items-center gap-4 mb-4"><i data-lucide="layout-template" class="w-8 h-8 text-indigo-400"></i><h3 class="text-2xl font-bold text-white">Design</h3></div><p class="text-slate-400">Our designers create visually stunning mockups tailored to your style, focusing on a seamless user experience.</p></div></div>
                     </div>
                 </div>
