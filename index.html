@@ -11,54 +11,64 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #e2e8f0;
-        }
-        .glass-effect {
-            background: rgba(17, 24, 39, 0.5);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0a0a0a;
+        color: #e2e8f0;
+    }
+    .glass-effect {
+        background: rgba(17, 24, 39, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .hero-bg {
+        background-size: cover;
+        background-position: center;
+        transition: background-image 1s ease-in-out;
+        /* Updated for better mobile responsiveness */
+        background-attachment: fixed;
+    }
+    /* Media query to adjust background for mobile screens */
+    @media (max-width: 768px) {
         .hero-bg {
             background-size: cover;
-            background-position: center;
-            transition: background-image 1s ease-in-out;
+            background-position: center top;
+            background-attachment: scroll;
         }
-        .section-glow {
-            position: relative;
-        }
-        .section-glow::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-        .card-hover-glow {
-            transition: all 0.3s ease;
-        }
-        .card-hover-glow:hover {
-            box-shadow: 0 0 40px rgba(99, 102, 241, 0.3), 0 0 10px rgba(99, 102, 241, 0.2);
-            transform: translateY(-5px);
-        }
-        .scroll-animation {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .scroll-animation.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    }
+    .section-glow {
+        position: relative;
+    }
+    .section-glow::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
+        z-index: -1;
+        pointer-events: none;
+    }
+    .card-hover-glow {
+        transition: all 0.3s ease;
+    }
+    .card-hover-glow:hover {
+        box-shadow: 0 0 40px rgba(99, 102, 241, 0.3), 0 0 10px rgba(99, 102, 241, 0.2);
+        transform: translateY(-5px);
+    }
+    .scroll-animation {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .scroll-animation.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 </head>
 <body class="antialiased">
 
